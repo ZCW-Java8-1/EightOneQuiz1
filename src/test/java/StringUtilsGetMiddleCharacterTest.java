@@ -66,4 +66,18 @@ public class StringUtilsGetMiddleCharacterTest {
         //Then
         assertEquals(expected, actual);
     }
+
+    //I don't think I did the exception correctly.
+//    @Test(expected = Exception.class)
+//    public void testStringWithEvenNoOfCharacters() {
+//        //Given
+//        String word = "pooppoop";
+//        String expected = "Word must contain odd number of letters";
+//
+//        //When
+//        char actual = utilities.getMiddleCharacter(word);
+//        //Then
+//        assertEquals(expected, actual);
+//
+//    }
 }

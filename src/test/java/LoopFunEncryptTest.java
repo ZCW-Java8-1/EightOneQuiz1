@@ -41,4 +41,17 @@ public class LoopFunEncryptTest
         //Then
         assertEquals(expected, actual);
     }
+
+//    @Test
+//    public void testEncryptNoSpecialCharacters() {
+//        //Given
+//        String word = "quiz1!@#";
+//        String expected = "Please only enter letters";
+//
+//        //When
+//        String actual = loop.encrypt(word);
+//
+//        //Then
+//        assertEquals(expected, actual);
+//    }
 }

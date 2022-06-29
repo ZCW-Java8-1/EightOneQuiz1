@@ -1,4 +1,4 @@
- 
+import java.util.Arrays;
 
 public class LoopFun
 {
@@ -10,7 +10,11 @@ public class LoopFun
        * @return the factorial of the number
        */
       public Integer factorial(Integer number){
-          return null;
+          Integer factorialResult = 1;
+          for (int i = 1; i <= number; i++) {
+              factorialResult = factorialResult * i;
+          }
+          return   factorialResult;
       }
 
       /**
@@ -21,7 +25,15 @@ public class LoopFun
        * @return Upper case string of the first letter of each word
        */
       public String acronym(String phrase) {
-          return null;
+          StringBuilder acronym = new StringBuilder();
+          String input = phrase;
+          input = input.toUpperCase();
+          String[] phraseArray = input.split(" ");
+          for (int i = 0; i < phraseArray.length; i++) {
+              acronym.append(phraseArray[i].charAt(0));
+          }
+          String result = acronym.toString();
+          return result;
       }
 
       /**
@@ -37,6 +49,52 @@ public class LoopFun
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
-          return null;
+          //this code doesn't check for letters, and can encrypt special characters...
+          //Not the best implementation, but now the method only accepts strings composed of letters. How it re-enters input
+          //would have to be considered where the method is called.
+          for (int j = 0; j < word.length(); j++) {
+              if (!Character.isLetter(word.charAt(j))) {
+                  return "Please only enter letters";
+              }
+          }
+          //The actual, used code. The numeric values of the letters weren't matching unicode... I've got to find java's numeric values.
+          char[] charArray = new char[word.length()];
+
+          for (int i = 0; i < word.length(); i++) {
+              int numberValueOfCurrentChar = java.lang.Character.getNumericValue(word.charAt(i));
+              if (numberValueOfCurrentChar >= 33) {
+                  int encryptedValue = (word.charAt(i) - 23);
+                  charArray[i] = (char) encryptedValue;
+              } else {
+                  int encryptedValue = (word.charAt(i) + 3);
+                  charArray[i] = (char) encryptedValue;
+              }
+          }
+              String encryptedWord = String.valueOf(charArray);
+              return encryptedWord;
+
+              //second attempt
+//          int[] valueOfChars = new int[word.length()];
+//          System.out.println(valueOfChars);
+//          for (int i = 0; i < word.length(); i++) {
+//              valueOfChars[i] = word.charAt(i) + 3;
+//          }
+//          System.out.println(valueOfChars);
+//          return null;
+
+              //first attempt -_-
+//          char[] lettersToChange = new char[word.length()];
+//          char currentLetter;
+//          for (int i = 0; i <word.length(); i++) {
+//              lettersToChange[i] = word.charAt(i);
+//          }
+//          for (int i = 0; i < word.length(); i++) {
+//              currentLetter = lettersToChange[i];
+//              currentLetter += 3;
+//              lettersToChange[i] = currentLetter;
+//          }
+//          String encryptedWord = lettersToChange.toString();
+//          return encryptedWord;
+          }
       }
-}
+
