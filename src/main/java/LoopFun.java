@@ -48,8 +48,6 @@ public class LoopFun
        */
       public String encrypt(String word) {
           String alphabet = "abcdefghijklmnopqrstuvwxyz";
-          String[] alphaArray = alphabet.split("");
-          String[] wordArray = word.split("");
           String secretWord = "";
           for (int wloop = 0 ; wloop < word.length() ; wloop++) {
               for (int aloop = 0 ; aloop < alphabet.length() ; aloop++)
