@@ -57,7 +57,6 @@ public class LoopFun
                   return "Please only enter letters";
               }
           }
-
           //The actual, used code. The numeric values of the letters weren't matching unicode... I've got to find java's numeric values.
           char[] charArray = new char[word.length()];
 
