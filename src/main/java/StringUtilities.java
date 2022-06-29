@@ -36,6 +36,9 @@ public class StringUtilities {
      * @return middle character of `word`
      */
     public Character getMiddleCharacter(String word) {
+        if (word.length() % 2 == 0) {
+            throw new IllegalArgumentException("Word must contain odd number of letters");
+        }
         int characterIndexToRetrieve = word.length() / 2;
         Character result = word.charAt(characterIndexToRetrieve);
         return result;

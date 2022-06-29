@@ -49,7 +49,18 @@ public class LoopFun
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
+          //this code doesn't check for letters, and can encrypt special characters...
+          //Not the best implementation, but now the method only accepts strings composed of letters. How it re-enters input
+          //would have to be considered where the method is called.
+          for (int j = 0; j < word.length(); j++) {
+              if (!Character.isLetter(word.charAt(j))) {
+                  return "Please only enter letters";
+              }
+          }
+
+          //The actual, used code. The numeric values of the letters weren't matching unicode... I've got to find java's numeric values.
           char[] charArray = new char[word.length()];
+
           for (int i = 0; i < word.length(); i++) {
               int numberValueOfCurrentChar = java.lang.Character.getNumericValue(word.charAt(i));
               if (numberValueOfCurrentChar >= 33) {
