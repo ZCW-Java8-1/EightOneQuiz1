@@ -36,7 +36,9 @@ public class StringUtilities {
      * @return middle character of `word`
      */
     public Character getMiddleCharacter(String word) {
-        return null;
+        int characterIndexToRetrieve = word.length() / 2;
+        Character result = word.charAt(characterIndexToRetrieve);
+        return result;
     }
 
     /**
