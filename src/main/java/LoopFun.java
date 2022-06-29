@@ -47,6 +47,19 @@ public class LoopFun
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
-          return null;
+          String alphabet = "abcdefghijklmnopqrstuvwxyz";
+          String[] alphaArray = alphabet.split("");
+          String[] wordArray = word.split("");
+          String secretWord = "";
+          for (int wloop = 0 ; wloop < word.length() ; wloop++) {
+              for (int aloop = 0 ; aloop < alphabet.length() ; aloop++)
+              if (word.charAt(wloop) == alphabet.charAt(aloop)) {
+                  if (aloop+3 >= 26) {
+                      secretWord += alphabet.charAt(aloop-23);
+                  } else {secretWord+=alphabet.charAt(aloop+3);}
+              }
+          }
+          return secretWord;
       }
+    //^^LAST BRACKET OF ENCRYPT
 }
