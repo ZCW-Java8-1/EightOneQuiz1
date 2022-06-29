@@ -1,4 +1,4 @@
- 
+import java.util.ArrayList;
 
 public class LoopFun
 {
@@ -10,7 +10,9 @@ public class LoopFun
        * @return the factorial of the number
        */
       public Integer factorial(Integer number){
-          return null;
+          int fact = 1;
+          for (int i = 1; i  <= number; i++) {fact = fact * i;}
+          return fact;
       }
 
       /**
@@ -21,7 +23,30 @@ public class LoopFun
        * @return Upper case string of the first letter of each word
        */
       public String acronym(String phrase) {
-          return null;
+            
+          String[] words = phrase.split("\\W+");
+          String output = "";
+          for (int i = 0; i <words.length; i++) {
+              // System.out.println(words[i]); // tests if words are being split
+              output += words[i].charAt(0);
+
+          }
+
+          return output.toUpperCase();
+          /*
+          char c = phrase.charAt(0);
+          String output = phrase;
+          String OutPut = null;
+          for (int i = 1; i < phrase.length(); i++) {
+              if (Character.isWhitespace(phrase.charAt(i))) {
+                  output = output + phrase.charAt(i);
+                  output += phrase.charAt(i+1);
+              }
+              OutPut = output.replaceAll("\\s+","").toUpperCase();
+          }
+
+        return OutPut;
+        */
       }
 
       /**
@@ -37,6 +62,17 @@ public class LoopFun
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
-          return null;
+          char[] pass = word.toCharArray();
+          int shiftVal = 3;
+          for (int i = 0; i < word.length(); i++) {
+              if (pass[i] >= 120) {
+                  pass[i] -= 23;
+
+              } else {
+                  pass[i] += shiftVal;
+              }
+          }
+          String password = new String(pass);
+          return password;
       }
 }
