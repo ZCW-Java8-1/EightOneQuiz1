@@ -52,17 +52,18 @@ public class LoopFun
           char[] charArray = new char[word.length()];
           for (int i = 0; i < word.length(); i++) {
               int numberValueOfCurrentChar = java.lang.Character.getNumericValue(word.charAt(i));
-              System.out.println(numberValueOfCurrentChar);
               if (numberValueOfCurrentChar >= 33) {
                   int encryptedValue = (word.charAt(i) - 23);
-                  charArray[i] = (char)encryptedValue;
+                  charArray[i] = (char) encryptedValue;
+              } else {
+                  int encryptedValue = (word.charAt(i) + 3);
+                  charArray[i] = (char) encryptedValue;
               }
-              int encryptedValue = (word.charAt(i) + 3);
-              charArray[i] = (char)encryptedValue;
           }
-          String encryptedWord = String.valueOf(charArray);
-          return encryptedWord;
+              String encryptedWord = String.valueOf(charArray);
+              return encryptedWord;
 
+              //second attempt
 //          int[] valueOfChars = new int[word.length()];
 //          System.out.println(valueOfChars);
 //          for (int i = 0; i < word.length(); i++) {
@@ -71,7 +72,7 @@ public class LoopFun
 //          System.out.println(valueOfChars);
 //          return null;
 
-          //first attempt -_-
+              //first attempt -_-
 //          char[] lettersToChange = new char[word.length()];
 //          char currentLetter;
 //          for (int i = 0; i <word.length(); i++) {
@@ -84,5 +85,6 @@ public class LoopFun
 //          }
 //          String encryptedWord = lettersToChange.toString();
 //          return encryptedWord;
+          }
       }
-}
+
