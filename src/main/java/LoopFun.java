@@ -1,4 +1,4 @@
- 
+import java.util.Locale;
 
 public class LoopFun
 {
@@ -10,8 +10,12 @@ public class LoopFun
        * @return the factorial of the number
        */
       public Integer factorial(Integer number){
-          return null;
-      }
+          int result = 1;
+          for (int i = number; i > 0; i--) {
+              result *= i;
+          }
+          return result;
+      } //passed
 
       /**
        * Given a phrase, get the acronym of that phrase. Acronym is the combination of
@@ -21,8 +25,13 @@ public class LoopFun
        * @return Upper case string of the first letter of each word
        */
       public String acronym(String phrase) {
-          return null;
-      }
+          String result = "";
+          for (String s : phrase.split("\\s")) {
+              result += s.charAt(0);
+          }
+          result = result.toUpperCase();
+          return result;
+      } //passed
 
       /**
        * To prevent anyone from reading our messages, we can encrypt it so it will only be readable by its
@@ -37,6 +46,20 @@ public class LoopFun
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
-          return null;
-      }
+          char[] ch = word.toCharArray();
+          for (int i = 0; i < ch.length; i++) {
+              if (ch[i] == 'x') {
+                  ch[i] -= 26;
+              }
+              if (ch[i] == 'y') {
+                  ch[i] -= 26;
+              }
+              if (ch[i] == 'z') {
+                  ch[i] -= 26;
+              }
+              ch[i] += 3;
+          }
+          String result = new String(ch);
+          return result;
+      } //passed
 }
