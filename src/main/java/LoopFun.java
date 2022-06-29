@@ -49,17 +49,40 @@ public class LoopFun
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
-          char[] lettersToChange = new char[word.length()];
-          char currentLetter;
-          for (int i = 0; i <word.length(); i++) {
-              lettersToChange[i] = word.charAt(i);
-          }
+          char[] charArray = new char[word.length()];
           for (int i = 0; i < word.length(); i++) {
-              currentLetter = lettersToChange[i];
-              currentLetter += 3;
-              lettersToChange[i] = currentLetter;
+              int numberValueOfCurrentChar = java.lang.Character.getNumericValue(word.charAt(i));
+              System.out.println(numberValueOfCurrentChar);
+              if (numberValueOfCurrentChar >= 33) {
+                  int encryptedValue = (word.charAt(i) - 23);
+                  charArray[i] = (char)encryptedValue;
+              }
+              int encryptedValue = (word.charAt(i) + 3);
+              charArray[i] = (char)encryptedValue;
           }
-          String encryptedWord = lettersToChange.toString();
+          String encryptedWord = String.valueOf(charArray);
           return encryptedWord;
+
+//          int[] valueOfChars = new int[word.length()];
+//          System.out.println(valueOfChars);
+//          for (int i = 0; i < word.length(); i++) {
+//              valueOfChars[i] = word.charAt(i) + 3;
+//          }
+//          System.out.println(valueOfChars);
+//          return null;
+
+          //first attempt -_-
+//          char[] lettersToChange = new char[word.length()];
+//          char currentLetter;
+//          for (int i = 0; i <word.length(); i++) {
+//              lettersToChange[i] = word.charAt(i);
+//          }
+//          for (int i = 0; i < word.length(); i++) {
+//              currentLetter = lettersToChange[i];
+//              currentLetter += 3;
+//              lettersToChange[i] = currentLetter;
+//          }
+//          String encryptedWord = lettersToChange.toString();
+//          return encryptedWord;
       }
 }

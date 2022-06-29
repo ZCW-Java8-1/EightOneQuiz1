@@ -40,7 +40,7 @@ public class StringUtilsGetLastWordTest {
     }
 
     @Test
-    public void test4() {
+    public void test3() {
         // Given
         String sentence = "quantum information conservation";
         String expected = "conservation";
@@ -53,7 +53,7 @@ public class StringUtilsGetLastWordTest {
     }
 
     @Test
-    public void test5() {
+    public void test4() {
         // Given
         String sentence = "The universe yields geometries so elegant, they animate with intelligence.";
         String expected = "intelligence.";
