@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class LoopFun {
@@ -12,19 +13,15 @@ public class LoopFun {
 
     // Getting first test to pass, I know I'm on the right track but must move on to other questions
     public Integer factorial(Integer number) {
-        int sum = 0;
-        for (int i = 1; i <= number; i++) {
-            sum = number *= i;
-            sum++;
+        int sum = 1;
+        for (int i = number; i > 0; i--) {
+            sum = sum * i;
+            System.out.println(sum);
         }
 
         return sum;
-//          while(int i <= number){
-//              number = number * i;
-//              i++
-//          }
-//          return number;
     }
+
 
     /**
      * Given a phrase, get the acronym of that phrase. Acronym is the combination of
@@ -33,15 +30,18 @@ public class LoopFun {
      * @param phrase
      * @return Upper case string of the first letter of each word
      */
-//      public String acronym(String phrase) {
-//          phrase.split("");
-//          for (int i = 0; i <= phrase; i++){
-//              System.out.println(i);
-//          }
-
-          return null;
-}
+      public String acronym(String phrase) {
+          String[] strList = phrase.split(" ");
+          String ans = "";
+          for (int i = 0; i <= strList.length; i++){
+              ans += strList[i].toUpperCase().charAt(0);
+              System.out.println(ans);
+          }
+          System.out.println(ans.toUpperCase());
+              return ans;
       }
+
+
 
       /**
        * To prevent anyone from reading our messages, we can encrypt it so it will only be readable by its

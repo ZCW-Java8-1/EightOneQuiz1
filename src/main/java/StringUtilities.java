@@ -41,16 +41,16 @@ public class StringUtilities {
 
 //    I know im close, still a beginner and trying to figure it all out, had to comment out "getMiddlechar" to run other test
     public Character getMiddleCharacter(String word) {
-//        int position;
-//        int size;
-//        if (word.length() % 2 == 0){
-//            position = word.length() / 2 - 1;
-//            size = 2;
-//        }else {
-//            position = word.length() / 2;
-//            size = 1;
-//        }
-//        return word.substring(position, position + size);
+////        int position;
+////        int size;
+////        if (word.length() % 2 == 0){
+////            position = word.length() / 2 - 1;
+////            size = 2;
+////        }else {
+////            position = word.length() / 2;
+////            size = 1;
+////        }
+////        return word.substring(position, position + size);
         return null;
     }
 
@@ -60,7 +60,7 @@ public class StringUtilities {
      * @return `value` with char of value `charToRemove` removed
      */
     public String removeCharacter(String value, Character charToRemove) {
-        String newStr = String.replace(charToRemove, " ");
+//        String newStr = String.replace(charToRemove, " ");
 
         return null;
     }
@@ -72,13 +72,13 @@ public class StringUtilities {
     public String getLastWord(String sentence) {
         String[] word = sentence.split(" ");
         for(int i = 0; i <= word.length; i++){
-            System.out.println(word[i].length() - 1);
+            System.out.println(word[i].toString().length() - 1);
         }
 //        sentence.split("");
 //        for(int i = 0; i <= sentence; i++){
 //
 //        }
-        return ;
+        return null ;
 
     }
 
