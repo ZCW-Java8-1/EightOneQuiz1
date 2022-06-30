@@ -33,11 +33,9 @@ public class LoopFun {
       public String acronym(String phrase) {
           String[] strList = phrase.split(" ");
           String ans = "";
-          for (int i = 0; i <= strList.length; i++){
+          for (int i = 0; i <= strList.length -1; i++){
               ans += strList[i].toUpperCase().charAt(0);
-              System.out.println(ans);
           }
-          System.out.println(ans.toUpperCase());
               return ans;
       }
 
@@ -61,16 +59,16 @@ public class LoopFun {
 //          run for loop on "words" String
 //          for each character of "words" string compare it to its position in alphabet string + 3
 //          return the new element
-          //Not really sure how to accomplish this
-//          String alphaString = "abcdefghijklmnopqrstuvwxyz";
-//          alphaString.split("");
-//          for( int i = 0; i <= word; i++ )
-//              if(int i = a){
-//          }
+//          Not really sure how to accomplish this
+                String alpha = "abcdefghijklmnopqrstuvwxyz";
+                StringBuilder encWord = new StringBuilder();
+                for (int i = 0; i < word.length();i ++){
+                    int idx = alpha.indexOf(word.charAt(i));
+                    idx += 2;
+                    idx = idx % 26;
+                    encWord.append(alpha.charAt(idx));
+                }
+                return encWord.toString();
 
-
-
-
-          return null;
       }
 }
