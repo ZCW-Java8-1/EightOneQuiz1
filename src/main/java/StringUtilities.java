@@ -29,6 +29,8 @@ public class StringUtilities {
         }
         String result = reverser.toString();
         return result;
+
+        // return new StringBuilder(valueToBeReversed).reverse().toString();  // a one line solution.
     }
 
     /**
@@ -42,6 +44,8 @@ public class StringUtilities {
         int characterIndexToRetrieve = word.length() / 2;
         Character result = word.charAt(characterIndexToRetrieve);
         return result;
+
+        //return word.charAt(word.length()/2); // one line solution that does the same thing.
     }
 
     /**
@@ -70,5 +74,12 @@ public class StringUtilities {
         //this works but I don't like it. It meets the test cases, but still includes punctuation. may update method & test cases.
         String[] input = sentence.split(" ");
         return input[input.length -1];
+
+        //or
+        //ArrayList<String> inputSentence = new ArrayList<>(sentence.split(""));
+        //return inputSentence.get(inputSentence.size()-1;
+
+//        or
+        //could have also used a variable to spot the last space, store that index position. then use that with input.substring();
     }
 }
