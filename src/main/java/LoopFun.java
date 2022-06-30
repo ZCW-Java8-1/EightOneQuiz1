@@ -15,6 +15,9 @@ public class LoopFun
               factorialResult = factorialResult * i;
           }
           return   factorialResult;
+
+          //ternary operator would've worked too
+          //return (number ==1) || (number == 0) ? 1 : number * factorial(number -1);
       }
 
       /**
@@ -34,6 +37,14 @@ public class LoopFun
           }
           String result = acronym.toString();
           return result;
+
+          /*String [] sentence = phrase.split(" ");
+          String result = "";
+          for (String s : sentence) {
+          result = result + s.charAt(0);
+          }
+          return result.toUpperCase();
+           */
       }
 
       /**
