@@ -64,7 +64,7 @@ public class LoopFun {
                 StringBuilder encWord = new StringBuilder();
                 for (int i = 0; i < word.length();i ++){
                     int idx = alpha.indexOf(word.charAt(i));
-                    idx += 2;
+                    idx += 3;
                     idx = idx % 26;
                     encWord.append(alpha.charAt(idx));
                 }
