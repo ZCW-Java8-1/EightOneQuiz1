@@ -26,9 +26,12 @@ public class LoopFun {
      * @return Upper case string of the first letter of each word
      */
     public String acronym(String phrase) {
-        //need to find real solution.
         //String result = phrase.replaceAll("\\B.|\\P{L}", "").toUpperCase();
-        return result;
+        StringBuilder initials = new StringBuilder();
+        for (String s : phrase.split(" ")){
+            initials.append(s.charAt(0));
+        }
+        return initials.toString().toUpperCase();
     }
 
     /**
