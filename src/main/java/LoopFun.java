@@ -15,6 +15,11 @@ public class LoopFun
               y = y * x;
           }
           return y;
+
+          // the factorial function can only go up to the number 13.
+          // \/\/ using ternary operators. kris didn't like it much
+//          return (number == 1) || (number == 0) ? 1 : number * factorial(number - 1);
+
       }
 
       /**
@@ -25,13 +30,21 @@ public class LoopFun
        * @return Upper case string of the first letter of each word
        */
       public String acronym(String phrase) {
-          String[] phraseArray = phrase.split(" ");
-          String acronym = "";
-          for (int i = 0 ; i <= phraseArray.length-1 ; i++) {
-              acronym += phraseArray[i].charAt(0);
+//          String[] phraseArray = phrase.split(" ");
+//          String acronym = "";
+//          for (int i = 0 ; i <= phraseArray.length-1 ; i++) {
+//              acronym += phraseArray[i].charAt(0);
+//          }
+//          acronym = acronym.toUpperCase();
+//          return acronym;
+
+          String[] sentence = phrase.split(" ");
+          String result = "";
+          for (String s : sentence) {
+              result = result + s.charAt(0);
           }
-          acronym = acronym.toUpperCase();
-          return acronym;
+          return result.toUpperCase();
+
       }
 
       /**
@@ -47,17 +60,29 @@ public class LoopFun
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
+//          String alphabet = "abcdefghijklmnopqrstuvwxyz";
+//          String secretWord = "";
+//          for (int wloop = 0 ; wloop < word.length() ; wloop++) {
+//              for (int aloop = 0 ; aloop < alphabet.length() ; aloop++)
+//              if (word.charAt(wloop) == alphabet.charAt(aloop)) {
+//                  if (aloop+3 >= 26) {
+//                      secretWord += alphabet.charAt(aloop-23);
+//                  } else {secretWord+=alphabet.charAt(aloop+3);}
+//              }
+//          }
+//          return secretWord;
+//      }
           String alphabet = "abcdefghijklmnopqrstuvwxyz";
-          String secretWord = "";
-          for (int wloop = 0 ; wloop < word.length() ; wloop++) {
-              for (int aloop = 0 ; aloop < alphabet.length() ; aloop++)
-              if (word.charAt(wloop) == alphabet.charAt(aloop)) {
-                  if (aloop+3 >= 26) {
-                      secretWord += alphabet.charAt(aloop-23);
-                  } else {secretWord+=alphabet.charAt(aloop+3);}
-              }
+          StringBuilder encword = new StringBuilder();
+          for (int i = 0; i < word.length(); i++) {
+              int index = alphabet.indexOf(word.charAt(i));
+              index += 3;
+              index = index % 26;
+              encword.append(alphabet.charAt(index));
           }
-          return secretWord;
+          return encword.toString();
       }
-    //^^LAST BRACKET OF ENCRYPT
+
+          //MOD WORKS HERE ON LINE 80 BECAUSE IT WILL LOOP FROM 0 TO 26.  IF THE NUMBER WOULD GO OVER 26
+          //IT WILL LOOP BACK TO 0.  CREATIVE WAY TO LOOP BACK AROUND TO THE BEGINNING OF THE ALPHABET.
 }

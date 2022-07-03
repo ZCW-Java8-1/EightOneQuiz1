@@ -83,5 +83,19 @@ public class StringUtilsRemoveCharacterTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void test5(){
+        // Given
+        String word = "fgamze";
+        String expected = "gamze";
+        char charToRemove = 'f';
+
+        //When
+        String actual = utilities.removeCharacter(word, charToRemove);
+
+        //Then
+        assertEquals(expected, actual);
+    }
+
     
 }

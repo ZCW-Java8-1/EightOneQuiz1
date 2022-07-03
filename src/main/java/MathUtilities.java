@@ -28,8 +28,12 @@ public class MathUtilities{
    * @return the half of the number in double
    */
   public Double half(Integer number) {
-      return number * 0.5;
+//      return number * 0.5; -- THIS WORKED WHILE "number / 2" DIDN'T BECAUSE '2' IS NOT A DOUBLE.
+      //BELOW IS PROBABLY THE BEST WAY TO DO THIS, EVEN THOUGH MY CODE WORKED.
+      //THE LESSON IS THAT MY ORIGINAL ANSWER FAILED BECAUSE I WASN'T USING A DOUBLE, I WAS USING AN INT.
+      return number / 2.0;
   }
+
 
   /**
    * Determine if the number is odd
@@ -49,5 +53,4 @@ public class MathUtilities{
   public Integer square(Integer number) {
       return number * number;
   }
-
 }
